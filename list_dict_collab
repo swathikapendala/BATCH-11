@@ -1,0 +1,177 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOcZVmP1O3FOxb3wdoEZzhF",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/swathikapendala/BATCH-11/blob/main/list_dict_collab\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "metadata": {
+        "id": "B_EVYRdVCsRA",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "f426ea86-f404-464b-95cc-73983cdc6f2a"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[12, 17, 2006]\n"
+          ]
+        }
+      ],
+      "source": [
+        "list=[12,17,2006]\n",
+        "print(list)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "dict={\"name\":\"vhyshu\",\"age\":19,\"fav_no\":17,\"city\":\"jagtial\"}\n",
+        "print(dict)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "b_DoqslUEFVF",
+        "outputId": "73e174ef-2404-4ac3-9b27-26c1131b3c56"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'vhyshu', 'age': 19, 'fav_no': 17, 'city': 'jagtial'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "data={\"name\":[\"chinni\",\"bunny\",\"chinnu\"],\"age\":[19,20,13],\"fav_no\":[17,18,19]}\n",
+        "df=pd.DataFrame(data)\n",
+        "print(df)\n",
+        "df.to_csv(\"input.csv\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "O_PBtOGTEcdd",
+        "outputId": "d95951d7-d8db-43a4-a137-bc55cbea69ab"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "     name  age  fav_no\n",
+            "0  chinni   19      17\n",
+            "1   bunny   20      18\n",
+            "2  chinnu   13      19\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "data1={\"name\":[\"chinni\",\"bunny\",\"chinnu\",\"chintu\",\"sweety\",\"pandu\",\"lucky\",\"chinnodu\",\"manoj\"],\"age\":[19,20,13,20,19,19,17,24,21],\"reation\":[\"self\",\"secret_diary\",\"chelleamma\",\"frndu\",\"frndu\",\"friend\",\"vadhinamma\",\"bro\",\"best_brother\"]}\n",
+        "df1=pd.DataFrame(data1)\n",
+        "print(df)\n",
+        "df.to_csv(\"input.csv\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Xjx3oXiCGYWn",
+        "outputId": "1870907d-8ee1-40da-9fb1-99e2311877c1"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "       name  age       reation\n",
+            "0    chinni   19          self\n",
+            "1     bunny   20  secret_diary\n",
+            "2    chinnu   13    chelleamma\n",
+            "3    chintu   20         frndu\n",
+            "4    sweety   19         frndu\n",
+            "5     pandu   19        friend\n",
+            "6     lucky   17    vadhinamma\n",
+            "7  chinnodu   24           bro\n",
+            "8     manoj   21  best_brother\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "merege=pd.concat([df,df1],axis=1)\n",
+        "print(merege)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VKfAkUpGKBOj",
+        "outputId": "d7a3e643-dedc-4045-88cb-3a22c19cde9d"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "       name  age       reation      name  age       reation\n",
+            "0    chinni   19          self    chinni   19          self\n",
+            "1     bunny   20  secret_diary     bunny   20  secret_diary\n",
+            "2    chinnu   13    chelleamma    chinnu   13    chelleamma\n",
+            "3    chintu   20         frndu    chintu   20         frndu\n",
+            "4    sweety   19         frndu    sweety   19         frndu\n",
+            "5     pandu   19        friend     pandu   19        friend\n",
+            "6     lucky   17    vadhinamma     lucky   17    vadhinamma\n",
+            "7  chinnodu   24           bro  chinnodu   24           bro\n",
+            "8     manoj   21  best_brother     manoj   21  best_brother\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
